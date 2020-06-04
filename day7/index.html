@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+<script>
+
+// let need_sort_list = [
+//     {
+//     "letter": "A",
+//     "list": [{
+//         "name": "奥迪",
+//         "id": 1
+//      },{
+//         "name": "阿特兹",
+//         "id": 2
+//        }]
+//      },
+//      {
+//         "letter": "B",
+//         "list": [{
+//             "name": "奔驰",
+//             "id": 3
+//          },{
+//             "name": "本田",
+//             "id": 4
+//            }]
+//     },
+//          {
+//             "letter": "C",
+//             "list": [{
+//                 "name": "长安",
+//                 "id": 5
+//              },{
+//                 "name": "长城",
+//                 "id": 6
+//                }]
+//              },
+
+// ];
+let original_list = [
+    {"id":1,"letter":"A","name":"奥迪"},
+    {"id":2,"letter":"A","name":"阿特兹"},
+    {"id":3,"letter":"B","name":"奔驰"},
+    {"id":4,"letter":"B","name":"本田"},
+    {"id":5,"letter":"C","name":"长安"},
+    {"id":6,"letter":"C","name":"长城"},
+
+]
+
+var tmp = "A";
+var need_sort_list;
+var tmpobj;
+for (var i =0; i<original_list.length;i++) {
+  for (var x in original_list[i]) {
+    if(original_list[i][letter]==tmp) {
+      tmpobj = {
+        letter : tmp,
+        list : [{
+            "name": original_list[i][name],
+            "id": original_list[i][id]
+         }]
+      }
+      need_sort_list.push(tmpobj);
+    }else {
+      tmp = original_list[i][letter];
+      i--;
+    }
+  }
+}
+console.log(need_sort_list);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  "use strict"
+  // a = 1;
+  // console.log(a);
+  function displauDate(){ 
+    document.getElementById("showdate").innerHTML = 5;
+  }
+  function changeSytle(){
+   var  x = document.getElementById("showdate");
+    x.style.color="#456";
+    window.alert("clickme");
+  }
+  
+  function calculate() {
+    
+  }
+</script>
+</head>
+<body>
+  <p id="showdate"></p>
+<button type="button" onclick="displauDate()">显示日期</button>
+<button type="button" onclick="changeSytle()">改变颜色</button>
+<button type="button" onclick="calculate()">计算</button>
+
+
+</body>
+</html>

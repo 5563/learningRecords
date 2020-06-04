@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+ 
+  </style>
+ 
+ <script language="javascript"> 
+
+var need_sort_list = [
+    {
+    "letter": "A",
+    "list": [{
+        "name": "奥迪",
+        "id": 1
+     },{
+        "name": "阿特兹",
+        "id": 2
+       }]
+     },
+     {
+        "letter": "B",
+        "list": [{
+            "name": "奔驰",
+            "id": 3
+         },{
+            "name": "本田",
+            "id": 4
+           }]
+    },
+         {
+            "letter": "C",
+            "list": [{
+                "name": "长安",
+                "id": 5
+             },{
+                "name": "长城",
+                "id": 6
+               }]
+             },
+
+];
+var original_list = [
+    {"id":1,"letter":"A","name":"奥迪"},
+    {"id":2,"letter":"A","name":"阿特兹"},
+    {"id":3,"letter":"B","name":"奔驰"},
+    {"id":4,"letter":"B","name":"本田"},
+    {"id":5,"letter":"C","name":"长安"},
+    {"id":6,"letter":"C","name":"长城"},
+
+]
+var tmp = original_list[0].letter;
+var arr = [];
+var tmparr= []
+var obj
+for(var i = 0;i<original_list.length;i++) {
+ if(original_list[i].letter == tmp){
+  tmparr.push({
+                "name": original_list[i].name,
+                "id": 5
+  })
+  
+  obj = {
+   letter:tmp,
+   list:tmparr
+  }
+//  console.log(obj)
+ }else {
+  arr.push(obj)
+  tmparr = [];
+  tmp = original_list[i].letter;
+  i--;
+ }
+ 
+ 
+}
+arr.push(obj)
+console.log(arr)
+</script>
+ </head>
+ <body>
+ 
+
+ </body>
+</html>

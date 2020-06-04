@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>事件冒泡</title>
+ <script>
+//   var arr = [1,2,30,4,5];
+//   var resule = arr.reduce((sum,item)=>sum + item,0);
+//   console.log(resule);
+//   // var t = arr.filter(function(item){
+//   //   return item>1
+//   // })
+//   // console.log(t);
+//  /*  function len(item){
+//     return item*10;
+//   }
+//   var t = arr.map(len)
+//   console.log(t) */
+// // function tmp(a,b){
+// //   return a-b;
+// // }
+// // 
+// // arr.forEach((item,index)=> {
+// //   arr[index] *=10;
+// // });
+// // var str = 'qwe-adf-zcv';
+
+// // console.log(str.split('-'));
+window.onload = function(){
+ document.getElementById("div2").addEventListener("click",function(e){
+    // alert(2);
+    // e.stopPropagation();
+    console.log("事件对象",e);
+  },true);
+ document.getElementById("div1").addEventListener("click",function(e){
+    // alert(1);
+    // e.stopPropagation();
+  },true);
+}
+
+
+
+</script>
+<style>
+#div1 {
+  width:100px;
+  height:100px;
+  background-color: aqua;
+
+} 
+#div2 {
+  width:50px;
+  height:50px;
+  background-color: rgb(63, 23, 194);
+}
+</style>
+</head>
+<body>
+  <div id="div1">
+    1
+    <div id="div2">
+        2
+    </div>
+
+  </div>
+</body>
+</html>

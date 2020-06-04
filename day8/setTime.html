@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>计数器</title>
+  <script>
+    window.onload = function() {
+      var time = document.getElementById("time");
+      var stop = document.getElementById("stop");
+      var start1 = document.getElementById("start");
+      var reset = document.getElementById("reset");
+      var a = 59;
+      // var timer = setInterval(() => {
+      //   time.innerHTML = a--;
+
+      // }, 1000);
+
+     
+      // setTimeout(() => {
+      //   clearInterval(timer)
+      // }, 10000);
+      var timer
+      start.addEventListener("click",function(){
+        // start1.innerText
+        time.style.backgroundColor="#456";
+        timer = setInterval(() => {
+          time.innerText = a--;
+
+      }, 1000);
+
+      })
+      stop.addEventListener("click",function (){
+        clearInterval(timer);
+      })
+      reset.addEventListener("click",function(){
+        clearInterval(timer);
+        a = 60;
+        time.innerText = a;
+      })
+    }
+    
+  </script>
+</head>
+<body>
+  <p>
+    倒计时<button type="button" id="time">1</button>
+    
+  </p>
+  <button type="button" id="start"">开始</button>
+  <button type="button" id="stop"">停止</button>
+  <button type="button" id="reset"">重置</button>
+</body>
+</html>
